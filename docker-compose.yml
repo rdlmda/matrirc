@@ -1,0 +1,7 @@
+  matrirc:
+    image: rdlmda/matrirc:0.1.0-alpine
+    container_name: weechat-matrirc
+    restart: unless-stopped
+    volumes:
+      - ./matrirc/data:/var/lib/matrirc
+    entrypoint: ['matrirc', '-l', '0.0.0.0:6667', '--allow-register']
